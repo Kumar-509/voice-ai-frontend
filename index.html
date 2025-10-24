@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice AI Assistant - Powered by OpenAI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>🤖 Voice AI Assistant</h1>
+            <p class="subtitle">Powered by OpenAI GPT-4 | Real-time Chat & Voice</p>
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-dot"></span>
+                <span class="status-text">Checking connection...</span>
+            </div>
+        </div>
+        
+        <!-- Main Chat Container -->
+        <div class="chat-container" id="chatContainer">
+            <div class="welcome-message">
+                <div class="welcome-icon">🎙️</div>
+                <h2>Welcome to Your AI Assistant!</h2>
+                <p>I can help you with:</p>
+                <ul class="features-list">
+                    <li>💬 Natural conversations using OpenAI GPT</li>
+                    <li>🔍 Web search with DuckDuckGo</li>
+                    <li>📚 Wikipedia information lookup</li>
+                    <li>⏰ Set and manage reminders</li>
+                    <li>🎤 Voice input and commands</li>
+                </ul>
+                <p class="tip">Try asking: "Search the web for AI news" or "Set a reminder for tomorrow at 9am"</p>
+            </div>
+        </div>
+        
+        <!-- Input Controls -->
+        <div class="input-container">
+            <input 
+                type="text" 
+                id="messageInput" 
+                placeholder="Type your message or click the mic for voice input..."
+                autocomplete="off"
+            >
+            <button class="action-button" id="searchButton" title="Web Search">
+                🔍
+            </button>
+            <button class="action-button" id="reminderButton" title="Set Reminder">
+                ⏰
+            </button>
+            <button class="mic-button" id="micButton" title="Voice Input">
+                🎤
+            </button>
+            <button class="send-button" id="sendButton">
+                ➤
+            </button>
+        </div>
+        
+        <!-- Status Bar -->
+        <div class="status-bar" id="statusBar">
+            <span id="statusMessage"></span>
+        </div>
+    </div>
+    
+    <!-- Modal for Reminders -->
+    <div class="modal" id="reminderModal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Set a Reminder</h2>
+            <form id="reminderForm">
+                <label for="reminderText">Reminder:</label>
+                <input type="text" id="reminderText" placeholder="What should I remind you about?" required>
+                
+                <label for="reminderTime">Date & Time:</label>
+                <input type="datetime-local" id="reminderTime" required>
+                
+                <button type="submit" class="modal-button">Create Reminder</button>
+            </form>
+            <div id="remindersList"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
